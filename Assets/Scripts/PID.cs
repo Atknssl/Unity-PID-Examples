@@ -13,11 +13,11 @@ public class PID {
 	}
 	
 	
-	public float Update(float setpoint, float actual, float timeFrame) {
-		float present = setpoint - actual;
-		integral += present * timeFrame;
-		float deriv = (present - lastError) / timeFrame;
-		lastError = present;
-		return present * pFactor + integral * iFactor + deriv * dFactor;
+	public float Update(float target, float current, float deltatime) {
+		float error = target - current;
+		integral += error * deltatime;
+		float derivative = (error - lastError) / deltatime;
+		lastError = error;
+		return error * pFactor + integral * iFactor + derivative * dFactor;
 	}
 }

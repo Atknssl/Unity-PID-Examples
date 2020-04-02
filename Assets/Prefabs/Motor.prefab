@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7913226636448831831}
   - component: {fileID: 7913226636448831829}
   - component: {fileID: 7913226636448831828}
+  - component: {fileID: -6309516589541701261}
   m_Layer: 0
   m_Name: Motor
   m_TagString: Untagged
@@ -119,6 +120,20 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.475, y: 0.5}
+  m_ConnectedAnchor: {x: 0.475, y: 0.5}
   m_DampingRatio: 0
   m_Frequency: 0
+--- !u!114 &-6309516589541701261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7913226636448831824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec181c6eb4c5ef74fb932b07091bb9e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 50
+  throttle: 0
