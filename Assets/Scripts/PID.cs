@@ -2,10 +2,8 @@
 public class PID {
 	public float pFactor, iFactor, dFactor;
 		
-	float integral;
-	float lastError;
-	
-	
+	private float _integral;
+	private float _lastError;
 	public PID(float pFactor, float iFactor, float dFactor) {
 		this.pFactor = pFactor;
 		this.iFactor = iFactor;
@@ -15,9 +13,14 @@ public class PID {
 	
 	public float Update(float target, float current, float deltatime) {
 		float error = target - current;
-		integral += error * deltatime;
-		float derivative = (error - lastError) / deltatime;
-		lastError = error;
-		return error * pFactor + integral * iFactor + derivative * dFactor;
+		_integral += error * deltatime;
+		float derivative = (error - _lastError) / deltatime;
+		_lastError = error;
+		return error * pFactor + _integral * iFactor + derivative * dFactor;
+	}
+
+	public void SetIntegral(float value)
+	{
+		_integral = value;
 	}
 }
