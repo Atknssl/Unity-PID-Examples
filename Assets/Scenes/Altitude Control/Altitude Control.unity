@@ -131,23 +131,18 @@ PrefabInstance:
     - target: {fileID: 7913226636448831824, guid: b153197c55c0f384e977561abd89806d,
         type: 3}
       propertyPath: m_Name
-      value: Right Motor
-      objectReference: {fileID: 0}
-    - target: {fileID: 7913226636448831828, guid: b153197c55c0f384e977561abd89806d,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: -0.475
-      objectReference: {fileID: 0}
-    - target: {fileID: 7913226636448831828, guid: b153197c55c0f384e977561abd89806d,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: 0.5
+      value: Left Motor
       objectReference: {fileID: 0}
     - target: {fileID: 7913226636448831828, guid: b153197c55c0f384e977561abd89806d,
         type: 3}
       propertyPath: m_ConnectedRigidBody
       value: 
       objectReference: {fileID: 1267316430}
+    - target: {fileID: 7913226636448831828, guid: b153197c55c0f384e977561abd89806d,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: -0.475
+      objectReference: {fileID: 0}
     - target: {fileID: 7913226636448831830, guid: b153197c55c0f384e977561abd89806d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -443,8 +438,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9537a2668be04374db082e917a0a70da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightMotor: {fileID: 1111377031}
-  leftMotor: {fileID: 1939163053}
+  rightMotor: {fileID: 1939163053}
+  leftMotor: {fileID: 1111377031}
   pid:
     pFactor: 0.8
     iFactor: 0.6
@@ -462,17 +457,7 @@ PrefabInstance:
     - target: {fileID: 7913226636448831824, guid: b153197c55c0f384e977561abd89806d,
         type: 3}
       propertyPath: m_Name
-      value: Left Motor
-      objectReference: {fileID: 0}
-    - target: {fileID: 7913226636448831828, guid: b153197c55c0f384e977561abd89806d,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: 0.475
-      objectReference: {fileID: 0}
-    - target: {fileID: 7913226636448831828, guid: b153197c55c0f384e977561abd89806d,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: 0.5
+      value: Right Motor
       objectReference: {fileID: 0}
     - target: {fileID: 7913226636448831828, guid: b153197c55c0f384e977561abd89806d,
         type: 3}

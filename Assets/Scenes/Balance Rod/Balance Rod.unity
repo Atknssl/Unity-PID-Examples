@@ -237,25 +237,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -6309516589541701261, guid: b153197c55c0f384e977561abd89806d,
-        type: 3}
-      propertyPath: force
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 7913226636448831824, guid: b153197c55c0f384e977561abd89806d,
         type: 3}
       propertyPath: m_Name
       value: Right Motor
-      objectReference: {fileID: 0}
-    - target: {fileID: 7913226636448831828, guid: b153197c55c0f384e977561abd89806d,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: 0.475
-      objectReference: {fileID: 0}
-    - target: {fileID: 7913226636448831828, guid: b153197c55c0f384e977561abd89806d,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7913226636448831828, guid: b153197c55c0f384e977561abd89806d,
         type: 3}
@@ -485,7 +470,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 692f4be363ac5b64195cdab4e433d302, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -678,16 +663,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -6309516589541701261, guid: b153197c55c0f384e977561abd89806d,
+    - target: {fileID: 4128642601950330703, guid: b153197c55c0f384e977561abd89806d,
         type: 3}
-      propertyPath: force
-      value: 50
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6552346232098125167, guid: b153197c55c0f384e977561abd89806d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6996789708175180737, guid: b153197c55c0f384e977561abd89806d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7913226636448831824, guid: b153197c55c0f384e977561abd89806d,
         type: 3}
       propertyPath: m_Name
       value: Left Motor
       objectReference: {fileID: 0}
+    - target: {fileID: 7913226636448831828, guid: b153197c55c0f384e977561abd89806d,
+        type: 3}
+      propertyPath: m_ConnectedRigidBody
+      value: 
+      objectReference: {fileID: 1371733641}
     - target: {fileID: 7913226636448831828, guid: b153197c55c0f384e977561abd89806d,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -698,11 +698,6 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7913226636448831828, guid: b153197c55c0f384e977561abd89806d,
-        type: 3}
-      propertyPath: m_ConnectedRigidBody
-      value: 
-      objectReference: {fileID: 1371733641}
     - target: {fileID: 7913226636448831830, guid: b153197c55c0f384e977561abd89806d,
         type: 3}
       propertyPath: m_LocalPosition.x
