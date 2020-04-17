@@ -244,6 +244,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7913226636448831828, guid: b153197c55c0f384e977561abd89806d,
         type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0.475
+      objectReference: {fileID: 0}
+    - target: {fileID: 7913226636448831828, guid: b153197c55c0f384e977561abd89806d,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7913226636448831828, guid: b153197c55c0f384e977561abd89806d,
+        type: 3}
       propertyPath: m_ConnectedRigidBody
       value: 
       objectReference: {fileID: 1371733641}
@@ -560,7 +570,7 @@ MonoBehaviour:
   pid:
     pFactor: 0.8
     iFactor: 0
-    dFactor: 0.3
+    dFactor: 0.4
   Throttle: 0.5
   angle: 0
 --- !u!1 &1523330590
@@ -663,31 +673,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4128642601950330703, guid: b153197c55c0f384e977561abd89806d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6552346232098125167, guid: b153197c55c0f384e977561abd89806d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6996789708175180737, guid: b153197c55c0f384e977561abd89806d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7913226636448831824, guid: b153197c55c0f384e977561abd89806d,
         type: 3}
       propertyPath: m_Name
       value: Left Motor
       objectReference: {fileID: 0}
-    - target: {fileID: 7913226636448831828, guid: b153197c55c0f384e977561abd89806d,
-        type: 3}
-      propertyPath: m_ConnectedRigidBody
-      value: 
-      objectReference: {fileID: 1371733641}
     - target: {fileID: 7913226636448831828, guid: b153197c55c0f384e977561abd89806d,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -698,6 +688,11 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7913226636448831828, guid: b153197c55c0f384e977561abd89806d,
+        type: 3}
+      propertyPath: m_ConnectedRigidBody
+      value: 
+      objectReference: {fileID: 1371733641}
     - target: {fileID: 7913226636448831830, guid: b153197c55c0f384e977561abd89806d,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -4,57 +4,55 @@ using UnityEngine;
 
 public class AltitudeController : MonoBehaviour
 {
-    private bool _acclim = false;
     private float _pidThrottle;
     private float _currentAltitude;
     private float _verticalSpeed;
-
     public Motor rightMotor;
     public Motor leftMotor;
     public PID pid;
-    public float maxacceleration;
-    public float maxspeed;
+    public float ascendMaxSpeed;
+    public float descendMaxSpeed;
     public float altitude;
 
-    void Update()
+    void FixedUpdate()
     {
         _verticalSpeed = gameObject.GetComponent<Rigidbody2D>().velocity.y;
         _currentAltitude = gameObject.transform.position.y;
-        _pidThrottle = pid.Update(altitude, _currentAltitude, Time.deltaTime);
-        if (_verticalSpeed > 0.5)
+        _pidThrottle = pid.Update(altitude, _currentAltitude, Time.fixedDeltaTime);
+
+        if (altitude - _currentAltitude < -5) //Engage Descend Speed Limiter if altitude difference is greater than 5
+        {
+            _pidThrottle = DescendSpeedLimiter(_pidThrottle, _verticalSpeed, 10);
+        }
+        //Integral Windup Start
+        if (_verticalSpeed > 0.5f) //Ascending
         {
             pid.SetIntegral(0);
         }
-        if(_verticalSpeed < -0.5)
+        if (_verticalSpeed < -0.5f) //Descending
         {
             pid.SetIntegral(0);
         }
-        if (altitude - _currentAltitude > 1f || _acclim) //Enable Acceleration Limiter
-        {
-            _pidThrottle = AccelerationLimiter(_pidThrottle, maxacceleration);
-            _acclim = true;
-        }
-        if (altitude - _currentAltitude < 0.5f && altitude - _currentAltitude >= 0) //Disable Acceleration Limiter
-        {
-            _acclim = false;
-        }
-        if (_verticalSpeed > maxspeed) //Speed Limiter
+        //Integral Windup End
+
+        if (_verticalSpeed > ascendMaxSpeed) //Ascend Speed Limiter
         {
             _pidThrottle = 0;
         }
+
         rightMotor.CreateForce(_pidThrottle);
         leftMotor.CreateForce(_pidThrottle);
     }
 
-    float AccelerationLimiter(float throttle,float maxacc)
+    float DescendSpeedLimiter(float throttle, float verticalspeed, float maxspeed)
     {
         float newthrottle;
         float mass = gameObject.GetComponent<Rigidbody2D>().mass + rightMotor.gameObject.GetComponent<Rigidbody2D>().mass + leftMotor.gameObject.GetComponent<Rigidbody2D>().mass;
         float force = (rightMotor.force + leftMotor.force);
-        float acc = (force * throttle - (9.81f)) / mass;
-        if (acc > maxacc) 
+        float weight = -1f * mass * Physics2D.gravity.y;
+        if (verticalspeed < -maxspeed)
         {
-            newthrottle = (maxacc * mass + 9.81f) / force;
+            newthrottle = weight / force;
             return newthrottle;
         }
         else return throttle;

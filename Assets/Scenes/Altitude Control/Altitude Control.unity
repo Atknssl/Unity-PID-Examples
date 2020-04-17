@@ -400,7 +400,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 692f4be363ac5b64195cdab4e433d302, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -444,9 +444,9 @@ MonoBehaviour:
     pFactor: 0.8
     iFactor: 0.6
     dFactor: 0.5
-  maxacceleration: 2
-  maxspeed: 3
-  altitude: 0
+  ascendMaxSpeed: 15
+  descendMaxSpeed: 10
+  altitude: 100
 --- !u!1001 &1271204003
 PrefabInstance:
   m_ObjectHideFlags: 0
