@@ -10,6 +10,7 @@ public class AltitudeController : MonoBehaviour
     public Motor rightMotor;
     public Motor leftMotor;
     public PID pid;
+    public float integralLimit;
     public float ascendMaxSpeed;
     public float descendMaxSpeed;
     public float altitude;
@@ -22,18 +23,16 @@ public class AltitudeController : MonoBehaviour
 
         if (altitude - _currentAltitude < -5) //Engage Descend Speed Limiter if altitude difference is greater than 5
         {
-            _pidThrottle = DescendSpeedLimiter(_pidThrottle, _verticalSpeed, 10);
+            _pidThrottle = DescendSpeedLimiter(_pidThrottle, _verticalSpeed, descendMaxSpeed);
         }
-        //Integral Windup Start
-        if (_verticalSpeed > 0.5f) //Ascending
+
+        //Anti Integral Windup Start
+        if (_verticalSpeed < -2f) //Descending
         {
-            pid.SetIntegral(0);
+            pid.LimitIntegral(0);
         }
-        if (_verticalSpeed < -0.5f) //Descending
-        {
-            pid.SetIntegral(0);
-        }
-        //Integral Windup End
+        pid.LimitIntegral(integralLimit); // Ascending
+        //Anti Integral Windup End
 
         if (_verticalSpeed > ascendMaxSpeed) //Ascend Speed Limiter
         {

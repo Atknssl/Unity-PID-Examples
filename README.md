@@ -1,5 +1,5 @@
 # Unity-PID-Examples
-
+There are some examples that may help you to understand PID logic.
 Currently there are 2 examples:
 
 ## Balance Rod
@@ -18,11 +18,11 @@ In this example, there are two motors connected to a rod which is free to move o
 
 Rod kept overshooting because of high velocity, so a speed limiter is implemented while rod ascends and descends. Maximum ascend and descend speed can be changed from editor.
 
-Also I factor was causing problems while changing altitude, so integral is disabled while rod is in transition. When the rod is stationary, Integral is enabled again. This is called integral windup. To get more information about this : https://en.wikipedia.org/wiki/Integral_windup
+To prevent [integral windup](https://en.wikipedia.org/wiki/Integral_windup) while changing altitude, maximum value of integral is limited.
 
 # Other Settings
 
 ## Motors
 Maximum force motor can create can be changed from motor script on each motor. Default value is 30N.
 ## Balls
-Masses of balls can be changed from Ball prefab. Default value is 1kg.
+Mass of balls can be changed from Ball prefab. Default value is 1kg.
