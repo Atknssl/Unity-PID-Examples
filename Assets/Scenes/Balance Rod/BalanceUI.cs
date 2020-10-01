@@ -10,15 +10,49 @@ public class BalanceUI : MonoBehaviour
     public InputField PValue;
     public InputField IValue;
     public InputField DValue;
+    public InputField HoldAngle;
+    public InputField Throttle;
 
     private void Start() {
         PValue.text = pid.GetComponent<BalanceController>().pid.pFactor.ToString();
         IValue.text = pid.GetComponent<BalanceController>().pid.iFactor.ToString();
         DValue.text = pid.GetComponent<BalanceController>().pid.dFactor.ToString();
+        Throttle.text = pid.GetComponent<BalanceController>().Throttle.ToString();
+        HoldAngle.text = pid.GetComponent<BalanceController>().angle.ToString();
+
     }
-    private void Update()
+    public void UpdateHoldAngle()
     {
-        
+        if(float.TryParse(this.HoldAngle.text, out float number))
+        {
+            pid.GetComponent<BalanceController>().angle = number;
+        }
+        else
+        {
+            this.HoldAngle.text = "Invalid value";
+        }
+    }
+    public void UpdateThrottle()
+    {
+        if(float.TryParse(this.Throttle.text, out float number))
+        {
+            //Throttle is between 0 and 1
+            if(number > 1)
+            {
+                this.Throttle.text = "1";
+                number = 1;
+            }
+            else if(number < 0)
+            {
+                this.Throttle.text = "0";
+                number = 0;
+            }
+            pid.GetComponent<BalanceController>().Throttle = number;
+        }
+        else
+        {
+            this.Throttle.text = "Invalid value";
+        }
     }
 
     public void UpdatePValue()
@@ -26,6 +60,10 @@ public class BalanceUI : MonoBehaviour
         if(float.TryParse(this.PValue.text, out float number))
         {
             pid.GetComponent<BalanceController>().pid.pFactor = number;
+        }
+        else
+        {
+            this.PValue.text = "Invalid value";
         }
     }
 
@@ -35,6 +73,10 @@ public class BalanceUI : MonoBehaviour
         {
             pid.GetComponent<BalanceController>().pid.iFactor = number;
         }
+        else
+        {
+            this.IValue.text = "Invalid value";
+        }
     }
 
         public void UpdateDValue()
@@ -42,6 +84,10 @@ public class BalanceUI : MonoBehaviour
         if(float.TryParse(this.DValue.text, out float number))
         {
             pid.GetComponent<BalanceController>().pid.dFactor = number;
+        }
+        else
+        {
+            this.DValue.text = "Invalid value";
         }
     }
 
