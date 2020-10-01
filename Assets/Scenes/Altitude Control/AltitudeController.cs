@@ -15,6 +15,7 @@ public class AltitudeController : MonoBehaviour
     public float descendMaxSpeed;
     public float altitude;
 
+
     void FixedUpdate()
     {
         _verticalSpeed = gameObject.GetComponent<Rigidbody2D>().velocity.y;
