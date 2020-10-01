@@ -6,7 +6,7 @@ public class AltitudeController : MonoBehaviour
 {
     private float _pidThrottle;
     private float _currentAltitude;
-    private float _verticalSpeed;
+    public float verticalSpeed { get; private set; }
     public Motor rightMotor;
     public Motor leftMotor;
     public PID pid;
@@ -18,24 +18,24 @@ public class AltitudeController : MonoBehaviour
 
     void FixedUpdate()
     {
-        _verticalSpeed = gameObject.GetComponent<Rigidbody2D>().velocity.y;
+        verticalSpeed = gameObject.GetComponent<Rigidbody2D>().velocity.y;
         _currentAltitude = gameObject.transform.position.y;
         _pidThrottle = pid.Update(altitude, _currentAltitude, Time.fixedDeltaTime);
 
         if (altitude - _currentAltitude < -5) //Engage Descend Speed Limiter if altitude difference is greater than 5
         {
-            _pidThrottle = DescendSpeedLimiter(_pidThrottle, _verticalSpeed, descendMaxSpeed);
+            _pidThrottle = DescendSpeedLimiter(_pidThrottle, verticalSpeed, descendMaxSpeed);
         }
 
         //Anti Integral Windup Start
-        if (_verticalSpeed < -2f) //Descending
+        if (verticalSpeed < -2f) //Descending
         {
             pid.LimitIntegral(0);
         }
         pid.LimitIntegral(integralLimit); // Ascending
         //Anti Integral Windup End
 
-        if (_verticalSpeed > ascendMaxSpeed) //Ascend Speed Limiter
+        if (verticalSpeed > ascendMaxSpeed) //Ascend Speed Limiter
         {
             _pidThrottle = 0;
         }
@@ -57,4 +57,5 @@ public class AltitudeController : MonoBehaviour
         }
         else return throttle;
     }
+
 }
