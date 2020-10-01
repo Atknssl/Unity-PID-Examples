@@ -29,7 +29,7 @@ public class BalanceUI : MonoBehaviour
         }
         else
         {
-            this.HoldAngle.text = "Invalid value";
+            this.HoldAngle.text = pid.GetComponent<BalanceController>().angle.ToString();
         }
     }
     public void UpdateThrottle()
@@ -51,7 +51,7 @@ public class BalanceUI : MonoBehaviour
         }
         else
         {
-            this.Throttle.text = "Invalid value";
+            this.Throttle.text = pid.GetComponent<BalanceController>().Throttle.ToString();
         }
     }
 
@@ -63,7 +63,7 @@ public class BalanceUI : MonoBehaviour
         }
         else
         {
-            this.PValue.text = "Invalid value";
+            this.PValue.text = pid.GetComponent<BalanceController>().pid.pFactor.ToString();
         }
     }
 
@@ -75,7 +75,7 @@ public class BalanceUI : MonoBehaviour
         }
         else
         {
-            this.IValue.text = "Invalid value";
+            this.IValue.text = pid.GetComponent<BalanceController>().pid.iFactor.ToString();
         }
     }
 
@@ -87,7 +87,7 @@ public class BalanceUI : MonoBehaviour
         }
         else
         {
-            this.DValue.text = "Invalid value";
+            this.DValue.text = pid.GetComponent<BalanceController>().pid.dFactor.ToString();
         }
     }
 

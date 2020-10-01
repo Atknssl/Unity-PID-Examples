@@ -20,6 +20,8 @@ Rod kept overshooting because of high velocity, so a speed limiter is implemente
 
 To prevent [integral windup](https://en.wikipedia.org/wiki/Integral_windup) while changing altitude, maximum value of integral is limited.
 
+Altitude lines will show until altitude of 100 meters, this can be changed from editor.
+
 # Other Settings
 
 ## Motors
