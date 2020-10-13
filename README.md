@@ -14,6 +14,8 @@ As there is no I factor at default settings, the rod won't try to balance itself
 
 ## Altitude Control
 ![AltitudeControl](https://atknssl.com/img/AltitudeControl.jpg)
+Demonstration video: [Youtube](https://youtu.be/p721Ur-T_SY)
+
 In this example, there are two motors connected to a rod which is free to move on y axis. PID controller on rod controls the system. Motors try to hold desired altitude, which can be changed from controller.
 
 Rod kept overshooting because of high velocity, so a speed limiter is implemented while rod ascends and descends. Maximum ascend and descend speed can be changed from editor.
