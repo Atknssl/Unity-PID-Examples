@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main Menu/Main Menu.unity
+    guid: e8acf6953c51e54fa979b1af781f44de
+  - enabled: 1
     path: Assets/Scenes/Balance Rod/Balance Rod.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Altitude Control/Altitude Control.unity
+    guid: 7cbf8b6143ee53244bfd96a613a3eef6
   m_configObjects: {}
