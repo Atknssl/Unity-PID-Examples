@@ -6,7 +6,7 @@ There are some basic examples that may help you to understand PID logic.
 Currently there are 2 examples:
 
 ## Balance Rod
-![BalanceRod](https://atknssl.com/img/BalanceRod.jpg)
+![BalanceRod](https://user-images.githubusercontent.com/40236955/106948157-68454180-673c-11eb-8f9e-be0c2f881709.jpg)
 In this example, there are two motors connected to a rod which can rotate around its center. PID controller on rod controls the system. Motors balance the rod at a desired angle, which can be changed from controller.
 
 This is actually PD controller by default, as there is no difference between motor power or loading, therefore I is not needed.
@@ -16,7 +16,7 @@ One can spawn weight balls to change loading, which would change the angle. Afte
 As there is no I factor at default settings, the rod won't try to balance itself to desired angle while balls are applying load. In order to change this, one must change the I factor from the controller to a positive value. With I factor addition, rod can also balance itself if motor powers are different.
 
 ## Altitude Control
-![AltitudeControl](https://atknssl.com/img/AltitudeControl.jpg)
+![AltitudeControl](https://user-images.githubusercontent.com/40236955/106948144-65e2e780-673c-11eb-90ed-a48efb64d418.jpg)
 Demonstration video: [Youtube](https://youtu.be/p721Ur-T_SY)
 
 In this example, there are two motors connected to a rod which is free to move on y axis. PID controller on rod controls the system. Motors try to hold desired altitude, which can be changed from controller.
