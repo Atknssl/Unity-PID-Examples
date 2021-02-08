@@ -1,10 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Threading;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TextStyle : MonoBehaviour
 {
+    private void Start()
+    {
+        Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("en-GB");
+    }
     public void enterHover()
     {
         this.GetComponent<Text>().color = Color.red;

@@ -1,7 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.UI;
+﻿using UnityEngine.UI;
 using UnityEngine;
+using System.Threading;
+using System.Globalization;
 
 public class BalanceUI : MonoBehaviour
 {
@@ -13,7 +13,10 @@ public class BalanceUI : MonoBehaviour
     public InputField HoldAngle;
     public InputField Throttle;
 
-    private void Start() {
+    private void Start() 
+    {
+        Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("en-GB");
+
         PValue.text = pid.GetComponent<BalanceController>().pid.pFactor.ToString();
         IValue.text = pid.GetComponent<BalanceController>().pid.iFactor.ToString();
         DValue.text = pid.GetComponent<BalanceController>().pid.dFactor.ToString();

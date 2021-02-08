@@ -1,7 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Threading;
+using System.Globalization;
 
 public class AltitudeUI : MonoBehaviour
 {
@@ -25,6 +25,8 @@ public class AltitudeUI : MonoBehaviour
 
     void Start()
     {
+        Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("en-GB");
+
         PValue.text = rod.GetComponent<AltitudeController>().pid.pFactor.ToString();
         IValue.text = rod.GetComponent<AltitudeController>().pid.iFactor.ToString();
         DValue.text = rod.GetComponent<AltitudeController>().pid.dFactor.ToString();
