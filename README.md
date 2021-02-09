@@ -27,6 +27,8 @@ To prevent [integral windup](https://en.wikipedia.org/wiki/Integral_windup) whil
 
 Altitude lines will show until altitude of 100 meters, this can be changed from editor.
 
+Current PID gains are choosen for altitude changes greater than 10m. For lower altitude changes, response will be slower. For example, with current gains, altitude change from 0 to 50m is quick and responsive, whereas altitude change from 0 to 5m is slow. To get better performance at small altitude changes, PID gains should be changed.
+
 # Other Settings
 
 ## Motors

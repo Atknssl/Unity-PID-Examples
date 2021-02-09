@@ -3333,9 +3333,9 @@ MonoBehaviour:
   rightMotor: {fileID: 1939163053}
   leftMotor: {fileID: 1111377031}
   pid:
-    pFactor: 0.7
+    pFactor: 9.65
     iFactor: 0.5
-    dFactor: 0.5
+    dFactor: 5
   integralLimit: 1
   ascendMaxSpeed: 10
   descendMaxSpeed: 10
