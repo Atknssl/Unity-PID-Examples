@@ -13,7 +13,7 @@ This is actually PD controller by default, as there is no difference between mot
 
 One can spawn weight balls to change loading, which would change the angle. After the ball leaves rod, rod will balance itself to desired angle. Balls have a default lifespan of 10s which can be changed from editor. 
 
-As there is no I factor at default settings, the rod won't try to balance itself to desired angle while balls are applying load. In order to change this, one must change the I factor from the controller to a positive value. With I factor addition, rod can also balance itself if motor powers are different.
+As there is no I factor at default settings, the rod won't be able to balance itself exactly to the desired angle while balls are applying load. In order to change this, one must change the I factor from the controller to a positive value. With I factor addition, rod can also balance itself if motor powers are different.
 
 ## Altitude Control
 ![AltitudeControl](https://user-images.githubusercontent.com/40236955/106948144-65e2e780-673c-11eb-90ed-a48efb64d418.jpg)
