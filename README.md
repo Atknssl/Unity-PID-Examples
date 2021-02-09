@@ -13,7 +13,7 @@ This is actually PD controller by default, as there is no difference between mot
 
 One can spawn weight balls to change loading, which would change the angle. After the ball leaves rod, rod will balance itself to desired angle. Balls have a default lifespan of 10s which can be changed from editor. 
 
-As there is no I factor at default settings, the rod won't try to balance itself to desired angle while balls are applying load. In order to change this, one must change the I factor from the controller to a positive value. With I factor addition, rod can also balance itself if motor powers are different.
+As there is no I factor at default settings, the rod won't be able to balance itself exactly to the desired angle while balls are applying load. In order to change this, one must change the I factor from the controller to a positive value. With I factor addition, rod can also balance itself if motor powers are different.
 
 ## Altitude Control
 ![AltitudeControl](https://user-images.githubusercontent.com/40236955/106948144-65e2e780-673c-11eb-90ed-a48efb64d418.jpg)
@@ -26,6 +26,8 @@ Rod kept overshooting because of high velocity, so a speed limiter is implemente
 To prevent [integral windup](https://en.wikipedia.org/wiki/Integral_windup) while changing altitude, maximum value of integral is limited.
 
 Altitude lines will show until altitude of 100 meters, this can be changed from editor.
+
+Current PID gains are choosen for altitude changes greater than 10m. For lower altitude changes, response will be slower. For example, with current gains, altitude change from 0 to 50m is quick and responsive, whereas altitude change from 0 to 5m is slow. To get better performance at small altitude changes, PID gains should be changed.
 
 # Other Settings
 

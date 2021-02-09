@@ -1917,9 +1917,9 @@ MonoBehaviour:
   rightMotor: {fileID: 1865945792}
   leftMotor: {fileID: 369072076}
   pid:
-    pFactor: 0.8
+    pFactor: 15.652
     iFactor: 0
-    dFactor: 0.4
+    dFactor: 3.14152
   Throttle: 0.5
   angle: 0
 --- !u!1 &1447465839
