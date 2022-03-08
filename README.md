@@ -1,7 +1,5 @@
 # Unity-PID-Examples
 
-There is a WebGL build of this project [here](https://atknssl.com/pidexamples)
-
 There are some basic examples that may help you to understand PID logic.
 Currently there are 2 examples:
 
